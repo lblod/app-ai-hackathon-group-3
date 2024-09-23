@@ -35,3 +35,11 @@ services:
     image: semtech/mu-delta-notifier
     volumes:
       - ./config/delta:/config
+  migrations:
+    image: semtech/mu-migrations-service:0.9.0
+    links:
+      - triplestore:database
+    environment:
+      MU_SPARQL_TIMEOUT: 600
+    volumes:
+      - ./config/migrations:/data/migrations
