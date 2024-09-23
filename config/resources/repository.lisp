@@ -1,5 +1,20 @@
 (in-package :mu-cl-resources)
 
+(add-prefix "ext" "http://mu.semte.ch/vocabularies/ext/")
+(add-prefix "person" "http://www.w3.org/ns/person#")
+(add-prefix "adres" "https://data.vlaanderen.be/ns/adres#")
+(add-prefix "schema" "http://schema.org/")
+(add-prefix "locn" "http://www.w3.org/ns/locn#")
+(add-prefix "persoon" "https://data.vlaanderen.be/ns/persoon#")
+(add-prefix "foaf" "http://xmlns.com/foaf/0.1/")
+(add-prefix "oe" "https://id.erfgoed.net/vocab/ontology#")
+(add-prefix "dct" "http://purl.org/dc/terms/")
+(add-prefix "besluit" "http://data.vlaanderen.be/ns/besluit#")
+(add-prefix "skos" "http://www.w3.org/2004/02/skos/core#")
+(add-prefix "adms" "http://www.w3.org/ns/adms#")
+(add-prefix "sdo" "https://schema.org/")
+(add-prefix "generiek" "https://data.vlaanderen.be/ns/generiek#")
+
 ;;;;
 ;; NOTE
 ;; docker-compose stop; docker-compose rm; docker-compose up

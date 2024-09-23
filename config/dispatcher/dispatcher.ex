@@ -21,6 +21,35 @@ defmodule Dispatcher do
   # Run `docker-compose restart dispatcher` after updating
   # this file.
 
+  ###############
+  # RESOURCES
+  ###############
+
+
+  match "/address-representations/*path", @json do
+    Proxy.forward conn, path, "http://resource/address-representations/"
+  end
+
+  match "/cases/*path", @json do
+    Proxy.forward conn, path, "http://resource/cases/"
+  end
+
+  match "/designation-objects/*path", @json do
+    Proxy.forward conn, path, "http://resource/designation-objects/"
+  end
+
+  match "/postal-items/*path", @json do
+    Proxy.forward conn, path, "http://resource/postal-items/"
+  end
+  #
+  # Run `docker-compose restart dispatcher` after updating
+  # this file.
+
+  match "/*_", %{ layer: :not_found } do
+    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  end
+end
+
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
