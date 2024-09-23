@@ -43,3 +43,5 @@ services:
       MU_SPARQL_TIMEOUT: 600
     volumes:
       - ./config/migrations:/data/migrations
+  adressenregister:
+    image: lblod/adressenregister-fuzzy-search-service
