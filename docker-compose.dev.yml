@@ -2,6 +2,6 @@ services:
   identifier:
     ports:
       - "80:80"
-  database:
+  virtuoso:
     ports:
       - "8890:8890"

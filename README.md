@@ -1,5 +1,4 @@
-# mu-project
-
+# app-ai-hackathon-group-3
 Bootstrap a mu.semte.ch microservices environment in three easy steps.
 
 ## Quickstart an mu-project

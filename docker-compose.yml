@@ -11,7 +11,7 @@ services:
       - resource:resource
     volumes:
       - ./config/dispatcher:/config
-  database:
+  virtuoso:
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -25,3 +25,13 @@ services:
       - database:database
     volumes:
       - ./config/resources:/config
+  database:
+    image: semtech/mu-authorization:0.6.0-beta.8
+    environment:
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
+    volumes:
+      - ./config/authorization:/config
+  deltanotifier:
+    image: semtech/mu-delta-notifier
+    volumes:
+      - ./config/delta:/config
