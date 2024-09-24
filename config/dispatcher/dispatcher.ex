@@ -6,8 +6,6 @@ defmodule Dispatcher do
   ]
 
   @any %{}
-  @json %{ accept: %{ json: true } }
-  @html %{ accept: %{ html: true } }
 
   define_layers [ :static, :services, :fall_back, :not_found ]
 
@@ -26,21 +24,42 @@ defmodule Dispatcher do
   ###############
 
 
-  match "/address-representations/*path", @json do
+  match "/address-representations/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/address-representations/"
   end
 
-  match "/cases/*path", @json do
+  match "/cases/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/cases/"
   end
 
-  match "/designation-objects/*path", @json do
+  match "/designation-objects/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/designation-objects/"
   end
 
-  match "/postal-items/*path", @json do
+  match "/postal-items/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/postal-items/"
   end
+
+  ###############################################################
+  # frontend layer
+  ###############################################################
+  match "/assets/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/assets/"
+  end
+
+  match "/@appuniversum/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/@appuniversum/"
+  end
+
+  match "/*path", %{ accept: %{html: true}, layer: :static } do
+    Proxy.forward conn, [], "http://frontend/index.html"
+  end
+
+  match "/*_path", %{ layer: :static } do
+    Proxy.forward conn, [], "http://frontend/index.html"
+  end
+
+
   #
   # Run `docker-compose restart dispatcher` after updating
   # this file.

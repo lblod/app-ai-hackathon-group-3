@@ -19,6 +19,8 @@ services:
     volumes:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
+  frontend:
+    image: lblod/frontend-ai-hackathon-group-3
   resource:
     image: semtech/mu-cl-resources:1.25.0
     links:
