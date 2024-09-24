@@ -6,8 +6,6 @@ defmodule Dispatcher do
   ]
 
   @any %{}
-  @json %{ accept: %{ json: true } }
-  @html %{ accept: %{ html: true } }
 
   define_layers [ :static, :services, :fall_back, :not_found ]
 
@@ -21,42 +19,65 @@ defmodule Dispatcher do
   # Run `docker-compose restart dispatcher` after updating
   # this file.
 
-  ###############
-  # RESOURCES
-  ###############
-
-
-  match "/address-representations/*path", @json do
-    Proxy.forward conn, path, "http://resource/address-representations/"
-  end
-
-  match "/cases/*path", @json do
-    Proxy.forward conn, path, "http://resource/cases/"
-  end
-
-  match "/designation-objects/*path", @json do
-    Proxy.forward conn, path, "http://resource/designation-objects/"
-  end
-
-  match "/postal-items/*path", @json do
-    Proxy.forward conn, path, "http://resource/postal-items/"
-  end
-
-  match "/decision-info/*path", @json do
+  match "/decision-info/*path", @any do
     Proxy.forward conn, path, "http://decision-info/"
   end
 
-  match "/llm/*path", @json do
+  match "/llm/*path", @any do
     Proxy.forward conn, path, "http://llm/"
   end
+
+
+  ###############
+  # RESOURCES
+  ###############
+  match "/remote-files/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/remote-files/"
+  end
+
+  match "/identifiers/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/identifiers/"
+  end
+
+  match "/cases/*path", %{ layer: :services, json: true } do
+    Proxy.forward conn, path, "http://resource/cases/"
+  end
+
+  match "/designation-objects/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/designation-objects/"
+  end
+
+  match "/postal-items/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/postal-items/"
+  end
+
+  match "/decisions/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/decisions/"
+  end
+
+  ###############################################################
+  # frontend layer
+  ###############################################################
+  match "/assets/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/assets/"
+  end
+
+  match "/@appuniversum/*path", %{ layer: :static } do
+    Proxy.forward conn, path, "http://frontend/@appuniversum/"
+  end
+
+  match "/*path", %{ accept: %{html: true}, layer: :fall_back } do
+    Proxy.forward conn, [], "http://frontend/index.html"
+  end
+
+  match "/*_path", %{ layer: :fall_back } do
+    Proxy.forward conn, [], "http://frontend/index.html"
+  end
+
 
   #
   # Run `docker-compose restart dispatcher` after updating
   # this file.
-
-  match "/*_", %{ layer: :not_found } do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
-  end
 
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )

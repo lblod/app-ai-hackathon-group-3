@@ -3,6 +3,7 @@ services:
     image: semtech/mu-identifier:1.10.3
     environment:
       SESSION_COOKIE_SECURE: "on"
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"},{\"variables\":[],\"name\":\"clean\"}]"
     links:
       - dispatcher:dispatcher
   dispatcher:
@@ -19,6 +20,8 @@ services:
     volumes:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
+  frontend:
+    image: lblod/frontend-ai-hackathon-group-3
   resource:
     image: semtech/mu-cl-resources:1.25.0
     links:
@@ -28,7 +31,9 @@ services:
   database:
     image: semtech/mu-authorization:0.6.0-beta.8
     environment:
-      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      LOG_ACCESS_RIGHTS: true
+      ERROR_ON_UNWRITTEN_DATA: true
     volumes:
       - ./config/authorization:/config
   deltanotifier:

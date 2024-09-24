@@ -16,12 +16,19 @@ defmodule Acl.UserGroups.Config do
       # // PUBLIC
       %GroupSpec{
         name: "public",
-        useage: [:read, :write],
+        useage: [:read, :write, :read_for_write],
         access: %AlwaysAccessible{},
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "https://id.erfgoed.net/vocab/ontology#Aanduidingsobject",
+                        "https://id.erfgoed.net/vocab/ontology#Besluit",
+                        "https://id.erfgoed.net/vocab/ontology#Dossier",
+                        "https://id.erfgoed.net/vocab/ontology#Poststuk",
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
+
                       ]
                     } } ] },
 

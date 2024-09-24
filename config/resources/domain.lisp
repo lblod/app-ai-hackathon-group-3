@@ -15,8 +15,6 @@
              (designation-object :via ,(s-prefix "oe:dos_handeltPrimairOver")
                                  :as "primary-subject")
              )
-  :has-many `((contact-point :via ,(s-prefix "schema:contactPoint")
-                             :as "contact-points"))
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/cases/")
   :on-path "cases"
@@ -28,15 +26,40 @@
                 (:full-address :string ,(s-prefix "locn:fullAddress"))
                 (:admin-unit-name :string ,(s-prefix "adres:Gemeentenaam"))
                 (:name :string ,(s-prefix "sdo:name"))
-                (:keywords :string ,(s-prefix "sdo:keyword"))
-                (:identifier :string ,(s-prefix "generiek:lokaleIndentificator")))
-  :has-one `((address-representation :via ,(s-prefix "locn:address")
-                                     :as "address")
-             )
+                (:keywords :string ,(s-prefix "sdo:keyword")))
+  :has-one `(
+             (identifier :via ,(s-prefix "adms:identifier")
+                          :as "identifier"))
+  :has-many `((decision :via ,(s-prefix "eli:cites")
+                        :inverse t
+                        :as "decisions"))
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/designation-objects/")
   :on-path "designation-objects"
   )
+
+(define-resource decision ()
+  :class (s-prefix "oe:Besluit")
+  :properties `((:publication-date :datetime ,(s-prefix "dct:issued"))
+                (:legal-implications :string ,(s-prefix "ext:legalImplications")))
+  :has-many `((designation-object :via ,(s-prefix "eli:cites")
+                                   :as "designation-objects")
+              (remote-file :via ,(s-prefix "ext:file")
+                           :as "files"))
+  :features '(include-uri)
+  :resource-base (s-url "http://data.lblod.info/id/decisions/")
+  :on-path "decisions"
+  )
+
+(define-resource remote-file ()
+  :class (s-prefix "nfo:RemoteDataObject")
+  :properties `((:filename      :string     ,(s-prefix "nfo:fileName"))
+                (:format        :string     ,(s-prefix "dct:format"))
+                (:size          :integer    ,(s-prefix "nfo:fileSize"))
+                (:url      :url   ,(s-prefix "nie:url")))
+  :features `(include-uri)
+  :resource-base (s-url "http://data.nove.eu/remote-files/")
+  :on-path "remote-files")
 
 (define-resource postal-item ()
   :class (s-prefix "oe:Poststuk")
@@ -45,6 +68,14 @@
   :resource-base (s-url "http://data.lblod.info/id/postal-items/")
   :on-path "postal-items"
   )
+
+(define-resource identifier ()
+  :class (s-prefix "adms:Identifier")
+  :properties `((:identifier :string ,(s-prefix "skos:notation")))
+  :resource-base (s-url "http://data.lblod.info/id/identifiers/")
+  :features '(include-uri)
+  :on-path "identifiers")
+
 
 ;; reading in the domain.json
 ;; (read-domain-file "domain.json")
