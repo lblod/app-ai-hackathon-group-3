@@ -22,9 +22,11 @@ defmodule Dispatcher do
   ###############
   # RESOURCES
   ###############
+  match "/remote-files/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/address-representations/"
+  end
 
-
-  match "/address-representations/*path", %{ layer: :services, json: true } do
+  match "/identifiers/*path", %{ layer: :services, accept: %{ json: true} } do
     Proxy.forward conn, path, "http://resource/address-representations/"
   end
 
@@ -32,12 +34,15 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/cases/"
   end
 
-  match "/designation-objects/*path", %{ layer: :services, json: true } do
+  match "/designation-objects/*path", %{ layer: :services, accept: %{ json: true} } do
     Proxy.forward conn, path, "http://resource/designation-objects/"
   end
 
-  match "/postal-items/*path", %{ layer: :services, json: true } do
+  match "/postal-items/*path", %{ layer: :services, accept: %{ json: true} } do
     Proxy.forward conn, path, "http://resource/postal-items/"
+  end
+  match "/decisions/*path", %{ layer: :services, accept: %{ json: true} } do
+    Proxy.forward conn, path, "http://resource/decisions/"
   end
 
   ###############################################################
@@ -51,11 +56,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://frontend/@appuniversum/"
   end
 
-  match "/*path", %{ accept: %{html: true}, layer: :static } do
+  match "/*path", %{ accept: %{html: true}, layer: :fall_back } do
     Proxy.forward conn, [], "http://frontend/index.html"
   end
 
-  match "/*_path", %{ layer: :static } do
+  match "/*_path", %{ layer: :fall_back } do
     Proxy.forward conn, [], "http://frontend/index.html"
   end
 

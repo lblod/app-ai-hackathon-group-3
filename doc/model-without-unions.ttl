@@ -1,0 +1,138 @@
+@prefix cms: <http://mu.semte.ch/vocabulary/cms/>.
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/>.
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo>.
+@prefix eli: <http://data.europa.eu/eli/ontology#>.
+@prefix generiek: <https://data.vlaanderen.be/ns/generiek#>.
+@prefix sdo: <https://schema.org/>.
+@prefix adms: <http://www.w3.org/ns/adms#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix besluit: <http://data.vlaanderen.be/ns/besluit#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix oe: <https://id.erfgoed.net/vocab/ontology#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix persoon: <https://data.vlaanderen.be/ns/persoon#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix schema: <http://schema.org/>.
+@prefix adres: <https://data.vlaanderen.be/ns/adres#>.
+@prefix person: <http://www.w3.org/ns/person#>.
+@prefix rm: <http://mu.semte.ch/vocabularies/logical-delete/>.
+@prefix typedLiterals: <http://mu.semte.ch/vocabularies/typed-literals/>.
+@prefix mu: <http://mu.semte.ch/vocabularies/core/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix app: <http://mu.semte.ch/app/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+
+<http://mu.semte.ch/ontology> rdf:type owl:Ontology.
+<http://mu.semte.ch/ontology> dc:title "Generated resource ontology". 
+<http://mu.semte.ch/ontology> dc:description "Generated resource ontology". 
+
+nfo:RemoteDataObject rdf:type owl:Class;
+  rdfs:label "remote-file".
+adms:Identifier rdf:type owl:Class;
+  rdfs:label "identifier".
+oe:Poststuk rdf:type owl:Class;
+  rdfs:label "postal-item".
+oe:Besluit rdf:type owl:Class;
+  rdfs:label "decision".
+oe:Dossier rdf:type owl:Class;
+  rdfs:label "case".
+oe:Aanduidingsobject rdf:type owl:Class;
+  rdfs:label "designation-object".
+
+nfo:fileName rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is nfo:fileName.";
+  rdfs:label "filename";
+  rdfs:range rdfs:Literal;
+  rdfs:domain nfo:RemoteDataObject.
+dct:format rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is dct:format.";
+  rdfs:label "format";
+  rdfs:range rdfs:Literal;
+  rdfs:domain nfo:RemoteDataObject.
+nfo:fileSize rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is integer.  Original predicate is nfo:fileSize.";
+  rdfs:label "size";
+  rdfs:range rdfs:Literal;
+  rdfs:domain nfo:RemoteDataObject.
+nie:url rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is url.  Original predicate is nie:url.";
+  rdfs:label "url";
+  rdfs:range rdfs:Literal;
+  rdfs:domain nfo:RemoteDataObject.
+skos:notation rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is skos:notation.";
+  rdfs:label "identifier";
+  rdfs:range rdfs:Literal;
+  rdfs:domain adms:Identifier.
+rdf:value rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is rdf:value.";
+  rdfs:label "body";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Poststuk.
+dct:issued rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is datetime.  Original predicate is dct:issued.";
+  rdfs:label "publication-date";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Besluit.
+ext:legalImplications rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is ext:legalImplications.";
+  rdfs:label "legal-implications";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Besluit.
+dct:created rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is datetime.  Original predicate is dct:created.";
+  rdfs:label "created";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Dossier.
+locn:fullAddress rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is locn:fullAddress.";
+  rdfs:label "full-address";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Aanduidingsobject.
+adres:Gemeentenaam rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is adres:Gemeentenaam.";
+  rdfs:label "admin-unit-name";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Aanduidingsobject.
+sdo:name rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is sdo:name.";
+  rdfs:label "name";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Aanduidingsobject.
+sdo:keyword rdf:type owl:DatatypeProperty;
+  rdfs:comment "Resources type is string.  Original predicate is sdo:keyword.";
+  rdfs:label "keywords";
+  rdfs:range rdfs:Literal;
+  rdfs:domain oe:Aanduidingsobject.
+
+
+eli:cites rdf:type owl:ObjectProperty;
+  rdfs:comment "";
+  rdfs:label "designation-objects";
+  rdfs:domain oe:Besluit;
+  rdfs:range oe:Aanduidingsobject.
+ext:file rdf:type owl:ObjectProperty;
+  rdfs:comment "";
+  rdfs:label "files";
+  rdfs:domain oe:Besluit;
+  rdfs:range nfo:RemoteDataObject.
+oe:dos_werdOpgestartDoorPoststuk rdf:type owl:ObjectProperty;
+  rdfs:comment "";
+  rdfs:label "started-by";
+  rdfs:domain oe:Dossier;
+  rdfs:range oe:Poststuk.
+oe:dos_handeltPrimairOver rdf:type owl:ObjectProperty;
+  rdfs:comment "";
+  rdfs:label "primary-subject";
+  rdfs:domain oe:Dossier;
+  rdfs:range oe:Aanduidingsobject.
+adms:identifier rdf:type owl:ObjectProperty;
+  rdfs:comment "";
+  rdfs:label "identifier";
+  rdfs:domain oe:Aanduidingsobject;
+  rdfs:range adms:Identifier.
+
+
+
