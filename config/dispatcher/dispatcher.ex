@@ -23,11 +23,11 @@ defmodule Dispatcher do
   # RESOURCES
   ###############
   match "/remote-files/*path", %{ layer: :services, accept: %{ json: true} } do
-    Proxy.forward conn, path, "http://resource/address-representations/"
+    Proxy.forward conn, path, "http://resource/remote-files/"
   end
 
   match "/identifiers/*path", %{ layer: :services, accept: %{ json: true} } do
-    Proxy.forward conn, path, "http://resource/address-representations/"
+    Proxy.forward conn, path, "http://resource/identifiers/"
   end
 
   match "/cases/*path", %{ layer: :services, json: true } do
