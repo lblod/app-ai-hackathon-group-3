@@ -21,3 +21,58 @@
 <http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
 <http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://mu.semte.ch/vocabularies/core/uuid> "9371da96-a545-45ab-82d1-d6578e1521c4" .
 <http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://purl.org/dc/terms/description> "Crimp gally handsomely ahoy lad tackle driver Jolly Roger code of conduct clap of thunder piracy come about bilge water carouser belay league line loaded to the gunwalls Davy Jones' Locker jolly boat. " .
+
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://mu.semte.ch/vocabularies/core/uuid> "46be9388-6a3d-4d15-9166-5b2bce00282c" .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/7b4c0b2b-0806-41f3-a513-7e37b700d82c> .
+<http://data.lblod.info/id/annotations/46be9388-6a3d-4d15-9166-5b2bce00282c> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4>.
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://mu.semte.ch/vocabularies/core/uuid> "9371da96-a545-45ab-82d1-d6578e1521c4" .
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://purl.org/dc/terms/description> "het aanbrengen,  verwijderen, vervangen  or  wijzigen van bultenschn]nwerken, deuren,  ramen,  luiken,  poorten,  mclus1ef  de al dan n1et f1gurat1eve beglazmg, claustra,  beslag,  hang- en  sluitwerk".
+
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://mu.semte.ch/vocabularies/core/uuid> "e498ab13-3785-4c46-94d6-37359b5787fa" .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/7b4c0b2b-0806-41f3-a513-7e37b700d82c> .
+<http://data.lblod.info/id/annotations/e498ab13-3785-4c46-94d6-37359b5787fa> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4>.
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://mu.semte.ch/vocabularies/core/uuid> "9371da96-a545-45ab-82d1-d6578e1521c4" .
+<http://data.lblod.info/id/authorisable-operation/9371da96-a545-45ab-82d1-d6578e1521c4> <http://purl.org/dc/terms/description> "het aanbrengen,  verwijderen, vervangen  of  wijzigen van de kleur,  textuur  of samenstelling van  de  afwerkmgslagen".
+
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://mu.semte.ch/vocabularies/core/uuid> "ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0" .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/7b4c0b2b-0806-41f3-a513-7e37b700d82c> .
+<http://data.lblod.info/id/annotations/ea1a9639-aea2-48ba-8cd6-ebf7eb8005a0> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/d0a5be9f-266b-430f-8ce4-930cc2ca7dad> .
+<http://data.lblod.info/id/authorisable-operation/d0a5be9f-266b-430f-8ce4-930cc2ca7dad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/d0a5be9f-266b-430f-8ce4-930cc2ca7dad> <http://mu.semte.ch/vocabularies/core/uuid> "d0a5be9f-266b-430f-8ce4-930cc2ca7dad" .
+<http://data.lblod.info/id/authorisable-operation/d0a5be9f-266b-430f-8ce4-930cc2ca7dad> <http://purl.org/dc/terms/description> "het verwijderen,  vervangen, wijzigen  of verstevigen  van  constructleve elementen" .
+
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://mu.semte.ch/vocabularies/core/uuid> "3e7e3334-6ee8-4afc-90b7-fc14332f5dc3" .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/7b4c0b2b-0806-41f3-a513-7e37b700d82c> .
+<http://data.lblod.info/id/annotations/3e7e3334-6ee8-4afc-90b7-fc14332f5dc3> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/7fe75011-ee99-41f3-8d35-61e9e8d66b00>  .
+<http://data.lblod.info/id/authorisable-operation/7fe75011-ee99-41f3-8d35-61e9e8d66b00> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/7fe75011-ee99-41f3-8d35-61e9e8d66b00> <http://mu.semte.ch/vocabularies/core/uuid> "7fe75011-ee99-41f3-8d35-61e9e8d66b00" .
+<http://data.lblod.info/id/authorisable-operation/7fe75011-ee99-41f3-8d35-61e9e8d66b00> <http://purl.org/dc/terms/description> "het verwijderen, vervangen of wijzigen  van h1stonsche matenalen en  het toepassen van behandelingen  met  als  doel  de  h1stonsche  matenalen  te  rem1gen,  te  herstellen,  te verduurzamen of te beschermen  tegen  verweer en  aantasting" .
+
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://mu.semte.ch/vocabularies/core/uuid> "f445a5de-41d7-4617-8ddc-4eaad869fe9d" .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/7b4c0b2b-0806-41f3-a513-7e37b700d82c> .
+<http://data.lblod.info/id/annotations/f445a5de-41d7-4617-8ddc-4eaad869fe9d> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/eb93a58d-881c-4874-9bf1-b2d64700fd1b> .
+<http://data.lblod.info/id/authorisable-operation/eb93a58d-881c-4874-9bf1-b2d64700fd1b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/eb93a58d-881c-4874-9bf1-b2d64700fd1b> <http://mu.semte.ch/vocabularies/core/uuid> "eb93a58d-881c-4874-9bf1-b2d64700fd1b" .
+<http://data.lblod.info/id/authorisable-operation/eb93a58d-881c-4874-9bf1-b2d64700fd1b> <http://purl.org/dc/terms/description> "het uitvoeren van de volgende werken aan  het dak en  de buitenmuren van constructies: ".
