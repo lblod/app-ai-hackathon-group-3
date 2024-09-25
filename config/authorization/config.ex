@@ -27,8 +27,8 @@ defmodule Acl.UserGroups.Config do
                         "https://id.erfgoed.net/vocab/ontology#Dossier",
                         "https://id.erfgoed.net/vocab/ontology#Poststuk",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
-
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } } ] },
 
