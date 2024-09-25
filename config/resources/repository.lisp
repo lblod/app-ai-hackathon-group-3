@@ -16,6 +16,7 @@
 (add-prefix "generiek" "https://data.vlaanderen.be/ns/generiek#")
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo")
+(add-prefix "nie" "http://www.semanticdesktop.org/ontologies/2007/01/19/nie")
 ;;;;
 ;; NOTE
 ;; docker-compose stop; docker-compose rm; docker-compose up
