@@ -26,7 +26,7 @@
   :resource-base (s-url "http://data.lblod.info/id/plans/")
   :has-many `((designation-object :via ,(s-prefix "ext:hasPlan")
                                   :inverse t
-                                  :as "plans"))
+                                  :as "designation-objects"))
 
   :on-path "plans"
   :features '(include-uri)
