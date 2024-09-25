@@ -23,13 +23,12 @@
 (define-resource plan ()
   :class (s-prefix "oe:Plan")
   :properties `((:identifier :string ,(s-prefix "dct:identifier")))
-  :resource-base (s-url "http://data.lblod.info/id/plans/")
   :has-many `((designation-object :via ,(s-prefix "ext:hasPlan")
                                   :inverse t
                                   :as "designation-objects"))
-
-  :on-path "plans"
   :features '(include-uri)
+  :resource-base (s-url "http://data.lblod.info/id/plans/")
+  :on-path "plans"
   )
 
 (define-resource designation-object ()
@@ -56,7 +55,7 @@
   :class (s-prefix "oe:Besluit")
   :properties `((:publication-date :datetime ,(s-prefix "dct:issued"))
                 (:legal-implications :string ,(s-prefix "oe:rechtsgevolgen"))
-                (:actions-requiring-permission ,)
+                ;; (:actions-requiring-permission ,)
                 (:identifier :string ,(s-prefix "dct:identifier")))
   :has-many `((designation-object :via ,(s-prefix "eli:cites")
                                    :as "designation-objects")
