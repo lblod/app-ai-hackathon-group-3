@@ -24,6 +24,7 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "https://id.erfgoed.net/vocab/ontology#Aanduidingsobject",
                         "https://id.erfgoed.net/vocab/ontology#Besluit",
+                        "https://id.erfgoed.net/vocab/ontology#Plan",
                         "https://id.erfgoed.net/vocab/ontology#Dossier",
                         "https://id.erfgoed.net/vocab/ontology#Poststuk",
                         "http://www.w3.org/ns/adms#Identifier",
