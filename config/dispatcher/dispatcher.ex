@@ -39,6 +39,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/identifiers/"
   end
 
+  match "/plans/*path", %{ layer: :services, json: true } do
+    Proxy.forward conn, path, "http://resource/plans/"
+  end
+
   match "/cases/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/cases/"
   end
