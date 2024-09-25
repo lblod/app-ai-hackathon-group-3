@@ -1,0 +1,13 @@
+<http://data.lblod.info/id/decisions/66F3D1784F36EC236A020335> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.erfgoed.net/vocab/ontology#Besluit> .
+<http://data.lblod.info/id/decisions/66F3D1784F36EC236A020335> <http://mu.semte.ch/vocabularies/core/uuid> "66F3D1784F36EC236A020335" .
+<http://data.lblod.info/id/decisions/66F3D1784F36EC236A020335> <http://purl.org/dc/terms/identifier> "1434" .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://mu.semte.ch/vocabularies/core/uuid> "b0958627-5a3e-46d5-b6c7-c5c8d308ebef" .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://purl.org/dc/terms/created> "2024-09-25T10:30:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://purl.org/dc/terms/creator> <http://example.org/ai-agent-1> .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://www.w3.org/ns/oa#motivatedBy> <http://example.org/knowledge-extraction> .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://www.w3.org/ns/oa#hasTarget> <http://data.lblod.info/id/decisions/66F3D1784F36EC236A020335> .
+<http://data.lblod.info/id/annotations/b0958627-5a3e-46d5-b6c7-c5c8d308ebef> <http://www.w3.org/ns/oa#hasBody> <http://data.lblod.info/id/authorisable-operation/4baab0b3-3ebf-4b9c-8f65-85918c246163> .
+<http://data.lblod.info/id/authorisable-operation/4baab0b3-3ebf-4b9c-8f65-85918c246163> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/AuthorisableOperation> .
+<http://data.lblod.info/id/authorisable-operation/4baab0b3-3ebf-4b9c-8f65-85918c246163> <http://mu.semte.ch/vocabularies/core/uuid> "4baab0b3-3ebf-4b9c-8f65-85918c246163" .
+<http://data.lblod.info/id/authorisable-operation/4baab0b3-3ebf-4b9c-8f65-85918c246163> <http://purl.org/dc/terms/description> "het plaatsen, slopen, verbouwen of heropbouwen van een constructie" .

@@ -20,6 +20,40 @@
   :on-path "cases"
   )
 
+(define-resource annotation ()
+  :class (s-prefix "oa:Annotation")
+  :properties `((:created :datetime ,(s-prefix "dct:created"))
+                (:creator :url ,(s-prefix "dct:creator"))
+                (:motivated-by :url ,(s-prefix "oa:motivatedBy"))
+                )
+  :has-one `(
+             (decision :via ,(s-prefix "oa:hasTarget")
+                       :as "target")
+             (authorisable-operation :via ,(s-prefix "oa:hasBody")
+                                     :as "body"))
+  :resource-base (s-url "http://data.lblod.info/id/annotations")
+  :on-path "annotations"
+  )
+(define-resource review ()
+  :class (s-prefix "ext:Review")
+  :properties `((:created :datetime ,(s-prefix "dct:created"))
+                (:creator :url ,(s-prefix "dct:creator"))
+                (:approved :boolean ,(s-prefix "ext:approved"))
+                )
+  :resource-base (s-url "http://data.lblod.info/id/reviews")
+  :on-path "reviews"
+  )
+
+(define-resource authorisable-operation ()
+  :class (s-prefix "ext:AuthorisableOperation")
+  :properties `((:description :string ,(s-prefix "dct:description"))
+                )
+  :has-one `((review :via ,(s-prefix "ext:hasReview")
+                    :as "review"))
+  :features '(include-uri)
+  :resource-base (s-url "http://data.lblod.info/id/authorisable-operation")
+  :on-path "authorisable-operations"
+  )
 (define-resource plan ()
   :class (s-prefix "oe:Plan")
   :properties `((:identifier :string ,(s-prefix "dct:identifier")))
@@ -60,7 +94,10 @@
   :has-many `((designation-object :via ,(s-prefix "eli:cites")
                                    :as "designation-objects")
               (remote-file :via ,(s-prefix "ext:file")
-                           :as "files"))
+                           :as "files")
+              (annotation :via ,(s-prefix "oa:hasTarget")
+                          :inverse t
+                          :as "annotations"))
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/decisions/")
   :on-path "decisions"

@@ -7,13 +7,30 @@ class "remote-files"
 "remote-files" : url
 class "identifiers"
 "identifiers" : identifier
+class "annotations"
+"annotations" : created
+"annotations" : creator
+"annotations" : motivated-by
+"annotations" --> "1" "decisions" : target > 
+"annotations" --> "1" "authorisable-operations" : body > 
+class "reviews"
+"reviews" : created
+"reviews" : creator
+"reviews" : approved
 class "postal-items"
 "postal-items" : body
+class "authorisable-operations"
+"authorisable-operations" : description
+"authorisable-operations" --> "1" "reviews" : review > 
 class "decisions"
 "decisions" : publication-date
 "decisions" : legal-implications
+"decisions" : identifier
 "decisions" --> "*" "designation-objects" : designation-objects > 
 "decisions" --> "*" "remote-files" : files > 
+class "plans"
+"plans" : identifier
+"plans" --> "*" "designation-objects" : designation-objects > 
 class "cases"
 "cases" : created
 "cases" --> "1" "postal-items" : started-by > 
@@ -25,4 +42,5 @@ class "designation-objects"
 "designation-objects" : keywords
 "designation-objects" --> "1" "identifiers" : identifier > 
 "designation-objects" --> "*" "decisions" : decisions > 
+"designation-objects" --> "*" "plans" : plans > 
 @enduml

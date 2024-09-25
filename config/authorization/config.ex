@@ -22,6 +22,9 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://www.w3.org/ns/oa#Annotation",
+                        "http://mu.semte.ch/vocabularies/ext/Review",
+                        "http://mu.semte.ch/vocabularies/ext/AuthorisableOperation",
                         "https://id.erfgoed.net/vocab/ontology#Aanduidingsobject",
                         "https://id.erfgoed.net/vocab/ontology#Besluit",
                         "https://id.erfgoed.net/vocab/ontology#Plan",

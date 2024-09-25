@@ -39,10 +39,21 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/identifiers/"
   end
 
-  match "/plans/*path", @any do # using @any because I didn't have time to debug why it wasn't working with regular matching 
+  match "/plans/*path", @any do # using @any because I didn't have time to debug why it wasn't working with regular matching
     Proxy.forward conn, path, "http://resource/plans/"
   end
 
+  match "/reviews/*path", @any do # using @any because I didn't have time to debug why it wasn't working with regular matching
+    Proxy.forward conn, path, "http://resource/reviews/"
+  end
+
+  match "/annotations/*path", @any do # using @any because I didn't have time to debug why it wasn't working with regular matching
+    Proxy.forward conn, path, "http://resource/annotations/"
+  end
+
+  match "/authorisable-operations/*path", @any do # using @any because I didn't have time to debug why it wasn't working with regular matching
+    Proxy.forward conn, path, "http://resource/authorisable-operations/"
+  end
   match "/cases/*path", %{ layer: :services, json: true } do
     Proxy.forward conn, path, "http://resource/cases/"
   end
